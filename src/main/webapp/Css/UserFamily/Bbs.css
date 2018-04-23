@@ -1,0 +1,93 @@
+@media (min-width: 1200px) {
+    .wall{
+        position:fixed;top:0;left:0;height: 150px;background: #ffffff;
+        width: 100%;
+        border-bottom: 1px solid #bbbbbb;
+        z-index: 20;
+    }
+
+
+    #daohang1{display: none}
+    #daohang3{display: none}
+    .daohang2{width:1200px;margin: 0 auto;height: 50px;}
+    *{padding: 0;margin: 0}
+    .row{height: 100px;width: 1200px;margin: 0 auto;}
+    #img3{position: relative}
+    #img{height: 50px;top: 20px;position: absolute;left: 50px;}
+    #daohang{top: 20px;position: relative}
+    ul{height: 50px;line-height: 53px;position: absolute; }
+    ul li{list-style: none;float: left;text-align: center;z-index: 2;position: absolute;height: 50px;}
+    ul li a{text-align: center;color: rgba(3, 8, 2, 0.52) ;font-size: 15px;line-height: 50px;}
+    ul li:hover a{color: #ffffff;text-decoration: none;}
+    .line{height: 0.5px;background: rgba(3, 8, 2, 0.26);width: 100%;top: 100px;position: absolute;}
+     .bg{border-radius:5px 5px 5px 5px;z-index:1;height: 30px;background: red;border: none;position: absolute;top:12px;left:630px;}
+     .bg2{border-radius:5px 5px 5px 5px;z-index:1;height: 30px;background: red;border: none;position: absolute;top:12px;left:418px}
+    #head{height: 50px;width: 50px;border-radius:25px 25px;top: 5px;position: absolute;right: 100px}
+    #img1{position: relative;height: 60px}
+     .asd{color:#ffffff}
+    .middle{top: 250px;width: 100%;height: 1050px;background: #ebebeb;top: 150px;position: absolute}
+    .middle1{width: 1200px;height: 1050px;background: #ffffff;margin: 0 auto;position: relative;background: #ffffff}
+    #left1{  height: 600px;border-right: 1px solid #bbbbbb;margin-top: 100px;  }
+    #right1{margin-top: 100px;height: 1010px}
+
+
+    .bottom{width: 100%;height: 66px;background: #ff0000;text-align: center;
+        color: #ffffff;line-height: 20px;position: relative;top: 1210px;}
+    .bottom1{width: 100%;height: 40px;position: absolute;top:10px;}
+    .bottom p{margin: 0px;  }
+}
+@media (min-width: 860px) and (max-width: 1199px) {
+    .wall{
+        position: relative;
+        width:860px;
+        margin: 0 auto;
+    }
+
+
+    #daohang1{display: none}
+    #daohang3{display: none}
+    *{padding: 0;margin: 0}
+    .row{height: 100px}
+    #img3{position: relative}
+    #img{height: 50px;top: 20px;position: absolute;left: 50px;}
+    #daohang{top: 20px;position: relative}
+    ul{height: 50px;line-height: 53px;position: absolute; }
+    ul li{list-style: none;float: left;text-align: center;z-index: 2;position: absolute;height: 50px;}
+    ul li a{text-align: center;color: rgba(3, 8, 2, 0.52) ;font-size: 15px;}
+    ul li:hover a{color: #ffffff;text-decoration: none;}
+    #line{height: 2px;background: rgba(3, 8, 2, 0.26);top: 100px;}
+    #line2{height: 2px;background: rgba(3, 8, 2, 0.26);}
+    .bg{border-radius:5px 5px 5px 5px;z-index:1;height: 30px;background: red;border: none;position: absolute;top:12px;}
+    #head{height: 50px;width: 50px;border-radius:25px 25px;top: 5px;position: absolute;right: 50px}
+    #img1{position: relative;height: 60px}
+    #middle{position: relative;top: 80px;}
+    #middle1{height: 600px;width:1px;background: #000000;}
+    #left1{  height: 800px  }
+}
+
+@media (min-width: 768px) and (max-width: 859px) {
+    #head{display: none}
+    #daohang{display: none}
+    #daohang2{display: none}
+    #daohang3{top: -20px}
+    #img{position:absolute;right: -180%;height: 50px;top:-145px;}
+    #im{display: none}
+    .d:hover{background: #c4c4c4  }
+}
+@media  screen and (max-width:767px) {
+    #head{display: none}
+    #daohang{display: none}
+    #daohang2{display: none}
+    #img{display: none;}
+    #im{height: 50px;}
+    .d:hover{background: #c4c4c4  }
+    #left1{
+        width: 40%;
+        min-width:300px;
+
+    }
+    #right1{
+        width: 55%;
+        min-width:500px;
+        width:expression_r(document.body.clientWidth < 767 ? "1000px": "auto" );  }
+}

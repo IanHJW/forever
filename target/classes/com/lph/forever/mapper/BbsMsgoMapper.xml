@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.BbsMsgoMapper" >
+  <resultMap id="BaseResultMap" type="com.lph.forever.po.BbsMsgo" >
+    <id column="MsgOId" property="msgoid" jdbcType="INTEGER" />
+    <result column="postId" property="postid" jdbcType="INTEGER" />
+    <result column="postid" property="postId" jdbcType="INTEGER" />
+    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="msgTime" property="msgtime" jdbcType="TIMESTAMP" />
+    <result column="agreeTime" property="agreetime" jdbcType="INTEGER" />
+    <result column="userImgpath" property="userimgpath" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.lph.forever.po.BbsMsgo" extends="BaseResultMap" >
+    <result column="msg" property="msg" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    MsgOId, postId, userName, msgTime, agreeTime
+  </sql>
+  <sql id="Blob_Column_List" >
+    msg
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_msgo
+    where MsgOId = #{msgoid,jdbcType=INTEGER}
+  </select>
+  
+  <!-- 查询第一层回复 -->
+  <select id="selectByOnepost" resultMap="BaseResultMap">
+  	SELECT
+		bbs_msgo.*
+	FROM
+		bbs_msgo,
+		bbs
+	WHERE
+		bbs_msgo.postId = bbs.postId
+	AND bbs.postId =#{postId}  order by msgTime DESC
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_msgo
+    where MsgOId = #{msgoid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.lph.forever.po.BbsMsgo" >
+    insert into bbs_msgo (MsgOId, postId, userName, 
+      msgTime, agreeTime, msg
+      )
+    values (#{msgoid,jdbcType=INTEGER}, #{postid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{msgtime,jdbcType=TIMESTAMP}, #{agreetime,jdbcType=INTEGER}, #{msg,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.lph.forever.po.BbsMsgo" >
+    insert into bbs_msgo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msgoid != null" >
+        MsgOId,
+      </if>
+      <if test="postid != null" >
+        postId,
+      </if>
+      <if test="username != null" >
+        userName,
+      </if>
+      <if test="msgtime != null" >
+        msgTime,
+      </if>
+      <if test="agreetime != null" >
+        agreeTime,
+      </if>
+      <if test="msg != null" >
+        msg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msgoid != null" >
+        #{msgoid,jdbcType=INTEGER},
+      </if>
+      <if test="postid != null" >
+        #{postid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="msgtime != null" >
+        #{msgtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreetime != null" >
+        #{agreetime,jdbcType=INTEGER},
+      </if>
+      <if test="msg != null" >
+        #{msg,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.BbsMsgo" >
+    update bbs_msgo
+    <set >
+      <if test="postid != null" >
+        postId = #{postid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="msgtime != null" >
+        msgTime = #{msgtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreetime != null" >
+        agreeTime = #{agreetime,jdbcType=INTEGER},
+      </if>
+      <if test="msg != null" >
+        msg = #{msg,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where MsgOId = #{msgoid,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lph.forever.po.BbsMsgo" >
+    update bbs_msgo
+    set postId = #{postid,jdbcType=INTEGER},
+      userName = #{username,jdbcType=VARCHAR},
+      msgTime = #{msgtime,jdbcType=TIMESTAMP},
+      agreeTime = #{agreetime,jdbcType=INTEGER},
+      msg = #{msg,jdbcType=LONGVARCHAR}
+    where MsgOId = #{msgoid,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.lph.forever.po.BbsMsgo" >
+    update bbs_msgo
+    set postId = #{postid,jdbcType=INTEGER},
+      userName = #{username,jdbcType=VARCHAR},
+      msgTime = #{msgtime,jdbcType=TIMESTAMP},
+      agreeTime = #{agreetime,jdbcType=INTEGER}
+    where MsgOId = #{msgoid,jdbcType=INTEGER}
+  </update>
+</mapper>

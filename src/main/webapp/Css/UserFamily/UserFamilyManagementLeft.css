@@ -1,0 +1,24 @@
+ul li{list-style: none;width: 160px;text-align: center;position: relative;height: 60px;}
+ul li a{text-align: center;text-decoration: none;color: #030802 }
+/*ul li:hover a{color: #e2060f;}*/
+*{padding: 0;margin: 0}
+#left{width: 80%;height: 400px;background: #ffffff;
+    box-shadow: 0px 0px 5px 1px #8f8f8f;  /*Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+*/
+    -webkit-box-shadow: 0px 0px 5px 1px #4a4a4a;
+    -moz-box-shadow: 0px 0px 5px 1px #4a4a4a;
+    /*background-clip: padding-box;*/
+    opacity: 0.8; /*透明度*/
+    position:absolute ;left:10%;top: 20px;
+
+
+}
+#im{width: 100%;height: 100px;}
+#img2{width:25%;
+    border-radius: 45px 45px 45px 45px;position: absolute;left: 37.5%;top: 25px; /*透明度*/}
+#p{position: absolute;top: 110px;text-align: center;width: 100%;}
+p{height:30px;}
+#zhanghao{margin-top: -10px;}
+#line3{width: 80%;height: 1px;background: rgba(3, 8, 2, 0.26);position: absolute;left: 10%;top: 160px;}
+#left2{position: absolute;top: 180px;width: 100%}
+#left2 li{list-style: none;width: 100%}
+#left2 a{text-decoration: none; text-align: center;font-size: medium;line-height: 60px}

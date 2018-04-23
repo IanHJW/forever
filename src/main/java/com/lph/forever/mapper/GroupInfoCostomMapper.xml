@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.GroupInfoCostomMapper" >
+	<resultMap id="BaseResultMap" type="com.lph.forever.po.GroupInfoCostom" >
+    <id column="groupId" property="groupid" jdbcType="INTEGER" />
+    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="groupImgPath" property="groupimgpath" jdbcType="VARCHAR" />
+    <result column="groupIntruduce" property="groupintruduce" jdbcType="VARCHAR" />
+    <result column="userimgPath" property="userimgpath" jdbcType="VARCHAR" />
+    <result column="groupVideoPower" property="groupvideopower" jdbcType="BIT" />
+    <association property="user" javaType="com.lph.forever.po.User">
+			<id column="userId" property="userid" />
+			<result column="userName" property="username" />
+			<result column="password" property="password" />
+			<result column="Email" property="email" />
+			<result column="userImgPath" property="userimgpath" />
+			<result column="location" property="location" />
+			<result column="groupName" property="groupname" />
+	</association>
+	
+</resultMap>
+  <!-- 根据家族名称来查询家族信息 -->
+  <select id="selectByGroupName" resultMap="BaseResultMap" 
+    parameterType="com.lph.forever.po.GroupInfoCostom">
+  	SELECT 
+  	`group`.* , `user`.*
+  	FROM 
+  	`user`
+		INNER JOIN
+			`group`
+		ON
+			`group`.groupName = `user`.groupName
+		AND 
+			`user`.groupName=#{groupname, jdbcType=VARCHAR}
+  </select>
+  
+ 
+  
+ </mapper>

@@ -1,0 +1,384 @@
+@media (min-width: 1200px) {
+.wall{
+    position:fixed;top:0;left:0;height: 100px;background: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid #bbbbbb;
+    z-index: 20;
+}
+.wall1{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+    #daohang1{display: none}
+    *{padding: 0;margin: 0}
+    .row{height: 100px;width: 1200px;margin: 0 auto}
+    .row1{height: 100px;width: 1200px;margin: 100px auto;}
+    #img3{position: relative}
+    #img{height: 50px;top: 20px;position: absolute;left: 30px;}
+    #daohang{top: 20px;position: relative}
+    ul{height: 50px;line-height: 53px;position: absolute; }
+    ul li{list-style: none;float: left;text-align: center;z-index: 2;position: absolute;height: 50px;}
+    ul li a{text-align: center;color: rgba(3, 8, 2, 0.52) ;font-size: 15px }
+    ul li:hover a{color: #ffffff;text-decoration: none;}
+
+    .bg{border-radius:5px 5px 5px 5px;z-index:1;height: 30px;background: red;border: none;position: absolute;top:12px;}
+
+    #login{position:absolute;top:10px;right:10%;width: 100px;height: 40px;background: #ff0000;border: 0px;border: solid 1px #bbbbbb;border-radius: 5px 5px 5px 5px}
+    #login:hover{background:#ff664d; }
+    #line2{height: 20px;width: 1px;background: #dffffa;position: absolute;right: 48px;top: 10px}
+    .lz{text-decoration:none;text-align: center;color: #ffffff;font-size:17px;line-height:40px;position: relative;font-weight: bold}
+    #lz1{position: absolute;left: 10px;}
+    #lz2{position: absolute;right: 10px;}
+    .lz:hover{text-decoration: none;color: #ffffff}
+    #sousuo{position: relative;top: 30px}
+    .btn-danger{width: 150px;}
+
+    #middle{width: 100%;height: 100%;background: rgb(235,235,235);border-top: 1px solid #bbbbbb;}
+
+    .m1{width: 1200px;height: 450px;background: #ffffff;margin: -100px auto}
+    .nei{width: 1080px;background: #000;margin:0 auto;}
+    .video1{overflow:hidden;float:left;position:relative;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;width: 530px;height: 350px;margin-top: 50px;}
+    .span1{width: 100px;height: 30px;line-height:30px;background: #ff0000;color: #ffffff;text-align: center;font-size: 15px;font-weight: bold;}
+    .m1bottom{float:left;position: absolute;bottom: 0px;width: 530px;height: 70px;background: rgba(0,0,0,0.5);line-height: 70px;text-align: center;color: #ffffff;font-size: 20px; /*透明度*/}
+    .fade1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .aa:hover .fade1{display: block;}
+    .aa:hover .video1{background-size: 150%;}
+    .bo1{transition: top 1s;position: absolute;color: #ffffff;top: -145px;left: 240px;z-index: 5;font-size: 50px;}
+    .video1:hover .bo1{z-index: 2;top:120px;}
+
+
+
+    .video2{float:right;width: 530px;height: 350px;margin-top: 50px;color:#fff;margin-right: -20px;overflow: hidden;position: relative}
+    .video-1{position:relative;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;width: 245px;height: 165px;float: left;margin-bottom: 20px;margin-right: 20px;}
+
+    .m2bottom2{float:left;position: absolute;bottom: 0px;width: 245px;height: 40px;background: rgba(0,0,0,0.5);line-height: 40px;text-align: center;color: #ffffff;font-size: 10px; /*透明度*/}
+
+    .bo2{transition: top 1s;position: absolute;color: #ffffff;top: -30px;left: 115px;z-index: -1;font-size: 25px;}
+
+    .aaa:hover .fade1{display: block;}
+    .aaa:hover .video-1{background-size: 150%;}
+    .aaa:hover .video-2{background-size: 150%;}
+    .video-1:hover .bo2{z-index: 2;top:70px;}
+    .video-2:hover .bo2{z-index: 2;top:70px;}
+
+    .m2{width: 1200px;height: 2580px;background: #ffffff;margin:130px auto 0px  auto}
+    .nei2{width: 1080px;height: 100%;margin: 0px auto;position: relative;}
+
+    .left1{width: 700px;height: 100%;position: absolute;left: 0px; }
+    .right1{width: 350px;height: 100%;position: absolute;right: 0px;border-left:1px solid #000000;}
+    .left1-0{width: 700px;height: 620px;position: absolute;top: 0px;}
+    .title1{width: 150px;height: 30px;background: #dddd00;top: 20px;position: absolute;border-radius: 5px 5px 5px 5px;line-height: 30px;text-align: center;color: #ffffff;font-weight: bold}
+    .left1-0-1{width: 700px;height: 600px;position: absolute;top: 50px;}
+    .leftl-0-2{position: absolute;margin-top: 25px;margin-right: -30px;overflow: hidden}
+    .left1-1{width:335px; height: 530px;position: relative;top: 20px;border-bottom: 1px solid #000000;margin-right: 15px;float: left}/*background: blue*/
+
+
+    .video-3{overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;width: 335px;height: 220px;}
+    .span-1{width: 100px;height: 30px;line-height:30px;background: #ff0000;color: #ffffff;text-align: center;font-size: 15px;font-weight: bold;}
+    .m1-bottom{float:left;position: absolute;bottom: 0px;width: 335px;height: 40px;background: rgba(0,0,0,0.5);line-height: 40px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-1:hover .fade1{display: block;}
+    .a-1:hover .video-3{background-size: 150%;}
+    .bo-1{transition: top 1s;position: absolute;color: #ffffff;top: -90px;left: 150px;z-index: 5;font-size: 35px;}
+    .video-3:hover .bo-1{z-index: 2;top:90px;}
+    .time-icon{width: 20px;height: 15px;position: absolute;left: 0px;top: 260px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name1{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 230px;left:5px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time1{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 260px;left:25px;text-align: left;font-weight: bold;}
+    .laud-icon{width: 20px;height: 15px;position: absolute;left: 100px;top: 260px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud1{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 260px;left:125px;text-align: left;font-weight: bold;}
+    .content1{width: 335px;height: 200px;font-size: 20px;position: absolute;top: 300px;left:0px;display: inline-block;  text-align: left;text-indent: 2em;text-overflow:ellipsis;  -o-text-overflow:ellipsis;  overflow: hidden;}
+    .left2-0{width: 700px;height: 390px;position: absolute;border-bottom: 1px solid #000000;top: 670px;}
+    .left1-3{width: 700px;height: 360px;position: absolute;top: 0px;}
+
+
+    .left1-3-1{width: 350px;height: 120px; position: relative;float: left;}
+    .video-3-3{width: 160px;height: 100px;overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;}
+    .span-3{width: 60px;height: 20px;line-height:20px;background: #ff0000;color: #ffffff;text-align: center;font-size: 10px;font-weight: bold;}
+    .m3-bottom{float:left;position: absolute;bottom: 0px;width: 160px;height: 20px;background: rgba(0,0,0,0.5);line-height: 20px;text-align: center;color: #ffffff;font-size: 12px; /*透明度*/}
+    .fade-3{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-3:hover .fade1{display: block;}
+    .a-3:hover .video-3-3{background-size: 150%;}
+    .bo-3{transition: top 1s;position: absolute;color: #ffffff;top: -50px;left: 75px;z-index: 5;font-size: 16px;}
+    .video-3-3:hover .bo-3{z-index: 2;top:42px;}
+
+
+    .name2{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 5px;left:180px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2{width: 125px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 65px;left:200px;text-align: left;font-weight: bold;}
+    .time2-icon{width: 20px;height: 15px;position: absolute;left: 175px;top:65px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-icon{width: 20px;height: 15px;position: absolute;left: 175px;top: 85px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 85px;left:200px;text-align: left;font-weight: bold;}
+
+    .left2-1{width: 700px;height: 570px;position: absolute;top:1060px;border-bottom: 1px solid #000000;}
+    .left2-1-0{margin-top: 70px;margin-right: -200px;overflow: hidden}
+    .left2-1-0-1{width: 220px;height: 250px;float: left;margin-right: 20px;position: relative;}
+
+
+    .video-3-1{overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;width: 220px;height: 150px;}
+    .span-2-1{width: 80px;height: 25px;line-height:25px;background: #ff0000;color: #ffffff;text-align: center;font-size: 12px;font-weight: bold;}
+    .m2-bottom-1{float:left;position: absolute;bottom: 0px;width: 220px;height: 30px;background: rgba(0,0,0,0.5);line-height: 30px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-2-1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-2-1:hover .fade-2-1{display: block;}
+    .a-2-1:hover .video-3-1{background-size: 150%;}
+    .bo2-2{transition: top 1s;position: absolute;color: #ffffff;top: -60px;left: 100px;z-index: 5;font-size: 20px;}
+    .video-3-1:hover .bo2-2{z-index: 2;top:65px;}
+    .time-icon-1{width: 20px;height: 15px;position: absolute;left: 0px;top: 190px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name2-1{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 160px;left:5px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2-1{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 190px;left:25px;text-align: left;font-weight: bold;}
+    .laud-icon-1{width: 20px;height: 15px;position: absolute;left: 100px;top: 190px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-1{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 190px;left:125px;text-align: left;font-weight: bold;}
+    .left2-2{width: 700px;height:625px;position: absolute;top: 1640px;border-bottom: 1px solid #000000;}
+    .left2-2-2{width: 350px;position:absolute;top: 75px;}
+    .left2-2-3{width: 350px;position:absolute;top: 75px;right: 0px;}
+    .left1-3-2{width: 335px;height: 129.5px; position: relative;left: 15px;}
+    .left2-3{width: 700px;height: 300px;position: absolute;top: 2265px;}
+    .left2-2-1{width:700px; height: 250px;position: absolute;top: 50px;}
+    .left2-2-0{position: relative;top: 25px;overflow: hidden;margin-right: -20px;}
+
+    .right1-1{width:330px;height: 580px;background: url("../img/zupu1.jpg");background-size:100%;position: absolute;top:70px;left: 20px;}
+
+    .right1-2{width: 350px;height: 200px;position: absolute;top: 650px;}
+    .right1-2-1{width: 120px;height: 30px;position: absolute;background: #000000;left: 25px;;top: 20px;border-radius: 5px 5px 5px 5px;line-height: 30px;text-align: center;color: #ffffff;font-weight: bold}
+    .right1-2-2{width: 340px;height: 120px;position: absolute;top: 55px;left: 10px;border-bottom: 1px solid #000000}
+    .right1-2-2-0{width: 334px;height: 120px;position: absolute;left: 6px;}
+    .right1-2-2-1{width: 60px;height: 25px;float: left;position: relative;margin: 3px;line-height: 25px;font-size: 15px;font-weight: bold}
+
+    .right1-3{width: 350px;height:450px;position: absolute;top: 850px;border-bottom:1px solid #000000}
+    .left3-3{width: 325px;height: 350px;position: absolute;top: 70px;left:25px;}
+
+    .right1-4{width: 350px;height:910px;position: absolute;top: 1300px;border-bottom:1px solid #000000;}
+    .right1-4-1{width: 350px;height:840px;position: absolute;top: 70px;}
+    .right1-4-1-1{width: 350px;height: 280px;position: relative;}
+    .video-3-right{overflow:hidden;position:relative;left:20px;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;width: 330px;height: 200px;}
+    .span-2-right{width: 80px;height: 25px;line-height:25px;background: #ff0000;color: #ffffff;text-align: center;font-size: 12px;font-weight: bold;}
+    .m2-bottom-right{float:left;position: absolute;bottom: 0px;width: 330px;height: 30px;background: rgba(0,0,0,0.5);line-height: 30px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-2-right{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-2-right:hover .fade-2-right{display: block;}
+    .a-2-right:hover .video-3-right{background-size: 150%;}
+    .bo2-right{transition: top 1s;position: absolute;color: #ffffff;top: -60px;left: 165px;z-index: 5;font-size: 20px;}
+    .video-3-right:hover .bo2-right{z-index: 2;top:90px;}
+    .time-icon-right{width: 20px;height: 15px;position: absolute;left: 15px;top: 240px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name2-right{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 210px;left:20px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2-right{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 240px;left:40px;text-align: left;font-weight: bold;}
+    .laud-icon-right{width: 20px;height: 15px;position: absolute;left: 140px;top: 240px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-right{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 240px;left:170px;text-align: left;font-weight: bold;}
+    .right1-5{width: 350px;height:370px;position: absolute;top: 2210px;}
+    .right5-1{width:330px;height: 250px;background: url("../img/halou.png");background-size: 100%;position: absolute;left: 20px;top: 70px;}
+
+    .bottom{width: 100%;height: 66px;background: #ff0000;text-align: center;color: #ffffff;line-height: 20px;position: absolute}
+    .bottom1{width: 100%;height: 40px;position: absolute;top:10px;}
+    .bottom p{margin: 0px;  }
+}
+@media  screen and (max-width: 1190px) {
+
+    .row1{height: 100px;width: 1200px;margin: 100px auto;}
+    .m1{width: 860px;height: 350px;background: #ffffff;margin: -100px auto}
+    .nei{width: 800px;background: #000;margin:0 auto;}
+    .video1{width: 390px;height: 250px;overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;margin-top: 50px;}
+    .span1{width: 80px;height: 25px;line-height:25px;background: #ff0000;color: #ffffff;text-align: center;font-size: 13px;font-weight: bold;}
+    .m1bottom{float:left;position: absolute;bottom: 0px;width: 390px;height: 50px;background: rgba(0,0,0,0.5);line-height: 50px;text-align: center;color: #ffffff;font-size: 18px; /*透明度*/}
+    .fade1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .aa:hover .fade1{display: block;}
+    .aa:hover .video1{background-size: 150%;}
+    .bo1{transition: top 1s;position: absolute;color: #ffffff;top: -145px;left: 175px;z-index: 5;font-size: 40px;}
+    .video1:hover .bo1{z-index: 2;top:105px;}
+
+
+
+    .video2{float:right;width: 400px;height: 250px;margin-top: 50px;color:#fff;margin-right: -20px;}
+    .video-1{width: 180px;height: 120px;margin-right:20px;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;float: left;margin-bottom:10px;position:relative;overflow: hidden;}
+
+    .m2bottom2{float:left;position: absolute;bottom: 0px;width: 190px;height: 30px;background: rgba(0,0,0,0.5);line-height: 30px;text-align: center;color: #ffffff;font-size: 10px; /*透明度*/}
+
+    .bo2{transition: top 1s;position: absolute;color: #ffffff;top: -30px;left: 85px;z-index: 2;font-size: 20px;}
+
+    .aaa:hover .fade1{display: block;}
+    .aaa:hover .video-1{background-size: 150%;}
+    .aaa:hover .video-2{background-size: 150%;}
+    .video-1:hover .bo2{z-index: 2;top:50px;}
+    .video-2:hover .bo2{z-index: 2;top:50px;}
+
+    .m2{width: 860px;height: 2160px;background: #ffffff;margin:130px auto 0px  auto}
+    .nei2{width: 800px;height: 100%;margin: 0px auto;position: relative;}
+
+    .left1{width: 540px;height: 100%;position: absolute;left: 0px; }
+    .right1{width: 260px;height: 100%;position: absolute;right: 0px;border-left:1px solid #000000;}
+    .title1{width: 140px;height: 30px;background: #dddd00;top: 20px;position: absolute;border-radius: 5px 5px 5px 5px;line-height: 30px;text-align: center;color: #ffffff;font-weight: bold}
+
+    .left1-0{width: 540px;height: 460px;position: absolute;top: 0px;}
+    .left1-0-1{width: 540px;height: 460px;position: absolute;top: 50px;}
+    .leftl-0-2{position: absolute;margin-top: 25px;margin-right: -30px;overflow: hidden}
+    .left1-1{width:250px; height: 460px;position: relative;top: 20px;border-bottom: 1px solid #000000;margin-right: 15px;float: left}
+
+    .video-3{width: 250px;height: 170px;overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;}
+    .span-1{width: 80px;height:25px;line-height:25px;background: #ff0000;color: #ffffff;text-align: center;font-size: 12px;font-weight: bold;}
+    .m1-bottom{float:left;position: absolute;bottom: 0px;width: 250px;height: 40px;background: rgba(0,0,0,0.5);line-height: 40px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-1:hover .fade1{display: block;}
+    .a-1:hover .video-3{background-size: 150%;}
+    .bo-1{transition: top 1s;position: absolute;color: #ffffff;top: -90px;left: 115px;z-index: 5;font-size: 30px;}
+    .video-3:hover .bo-1{z-index: 2;top:75px;}
+    .time-icon{width: 20px;height: 15px;position: absolute;left: 0px;top: 220px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name1{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 190px;left:5px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time1{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 220px;left:25px;text-align: left;font-weight: bold;}
+    .laud-icon{width: 20px;height: 15px;position: absolute;left: 100px;top: 220px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud1{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 220px;left:125px;text-align: left;font-weight: bold;}
+    .content1{width: 260px;height: 170px;font-size: 20px;position: absolute;top: 250px;left:0px;display: inline-block;  text-align: left;text-indent: 2em;text-overflow:ellipsis;  -o-text-overflow:ellipsis;  overflow: hidden;}
+    .left2-0{width: 540px;height: 310px;position: absolute;border-bottom: 1px solid #000000;top: 560px;}
+    .left1-3{width: 540px;height: 360px;position: absolute;top: 0px;}
+
+
+    .left1-3-1{width: 270px;height: 100px; position: relative;float: left}
+    .video-3-3{width: 130px;height: 85px;overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;}
+    .span-3{width: 60px;height: 20px;line-height:20px;background: #ff0000;color: #ffffff;text-align: center;font-size: 10px;font-weight: bold;}
+    .m3-bottom{float:left;position: absolute;bottom: 0px;width: 130px;height: 20px;background: rgba(0,0,0,0.5);line-height: 20px;text-align: center;color: #ffffff;font-size: 12px; /*透明度*/}
+    .fade-3{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-3:hover .fade1{display: block;}
+    .a-3:hover .video-3-3{background-size: 150%;}
+    .bo-3{transition: top 1s;position: absolute;color: #ffffff;top: -50px;left: 57px;z-index: 5;font-size: 16px;}
+    .video-3-3:hover .bo-3{z-index: 2;top:32px;}
+
+
+    .name2{width: 120px;height: 25px;font-size: 18px;line-height: 25px;position: absolute;top: 5px;left:140px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2{width: 80px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 45px;left:165px;text-align: left;font-weight: bold;}
+    .time2-icon{width: 20px;height: 15px;position: absolute;left: 135px;top:45px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-icon{width: 20px;height: 15px;position: absolute;left: 135px;top: 65px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 65px;left:165px;text-align: left;font-weight: bold;}
+
+    .left2-1{width: 520px;height: 470px;position: absolute;top:870px;border-bottom: 1px solid #000000;}
+    .left2-1-0{margin-top: 65px;overflow: hidden;margin-right: -20px;}
+    .left2-1-0-1{width: 160px;height: 200px;float: left;margin-right: 20px;position: relative;}
+
+
+
+    .video-3-1{width: 160px;height: 120px;overflow:hidden;position:relative;float:left;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;}
+    .span-2-1{width: 60px;height: 20px;line-height:20px;background: #ff0000;color: #ffffff;text-align: center;font-size: 12px;font-weight: bold;}
+    .m2-bottom-1{float:left;position: absolute;bottom: 0px;width: 160px;height: 30px;background: rgba(0,0,0,0.5);line-height: 30px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-2-1{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-2-1:hover .fade-2-1{display: block;}
+    .a-2-1:hover .video-3-1{background-size: 150%;}
+    .bo2-2{transition: top 1s;position: absolute;color: #ffffff;top: -60px;left: 72px;z-index: 5;font-size: 20px;}
+    .video-3-1:hover .bo2-2{z-index: 2;top:50px;}
+    .time-icon-1{width: 20px;height: 15px;position: absolute;left: 0px;top: 160px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name2-1{width: 150px;height: 30px;font-size: 18px;line-height: 30px;position: absolute;top: 130px;left:5px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2-1{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 160px;left:25px;text-align: left;font-weight: bold;}
+    .laud-icon-1{width: 20px;height: 15px;position: absolute;left: 100px;top: 160px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-1{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 160px;left:125px;text-align: left;font-weight: bold;}
+    .left2-2{width: 540px;height:520px;position: absolute;top: 1345px;border-bottom: 1px solid #000000;}
+    .left2-2-2{width: 260px;position:absolute;top: 75px;}
+    .left2-2-3{width: 260px;position:absolute;top: 75px;right: 0px;}
+    .left1-3-2{width: 245px;height: 108px; position: relative;left: 15px;}
+    .left2-3{width: 520px;height: 300px;position: absolute;top: 1865px;}
+    .left2-2-1{width:520px; height: 250px;position: absolute;top: 50px;}
+    .left2-2-0{overflow:hidden;margin-right:-20px;position: relative;top: 25px;}
+
+    .right1-1{width:250px;height: 500px;background: url("../img/zupu1.jpg")  no-repeat;background-size: 100% 500px;position: absolute;top:70px;left: 20px;}
+
+    .right1-2{width: 260px;height: 200px;position: absolute;top: 570px;}
+    .right1-2-1{width: 120px;height: 30px;position: absolute;background: #000000;left: 25px;;top: 20px;border-radius: 5px 5px 5px 5px;line-height: 30px;text-align: center;color: #ffffff;font-weight: bold}
+    .right1-2-2{width: 260px;height: 140px;position: absolute;top: 55px;left: 10px;border-bottom: 1px solid #000000}
+    .right1-2-2-0{width: 260px;height: 140px;position: absolute;left: 6px;}
+    .right1-2-2-1{width: 55px;height: 25px;float: left;position: relative;margin: 3px;line-height: 25px;font-size: 15px;font-weight: bold}
+
+    .right1-3{width: 260px;height:380px;position: absolute;top: 760px;border-bottom:1px solid #000000}
+    .left3-3{width: 250px;height: 350px;position: absolute;top: 70px;left:25px;}
+
+    .right1-4{width: 260px;height:760px;position: absolute;top: 1140px;border-bottom:1px solid #000000;}
+    .right1-4-1{width: 260px;height:680px;position: absolute;top: 70px;}
+    .right1-4-1-1{width: 260px;height: 230px;position: relative;}
+    .video-3-right{width: 240px;height: 150px;overflow:hidden;position:relative;left:20px;transition: background-size 1s;background:url("../img/head.png") no-repeat;background-size: 100%;background-position: center;}
+    .span-2-right{width: 80px;height: 25px;line-height:25px;background: #ff0000;color: #ffffff;text-align: center;font-size: 12px;font-weight: bold;}
+    .m2-bottom-right{float:left;position: absolute;bottom: 0px;width: 240195px;height: 30px;background: rgba(0,0,0,0.5);line-height: 30px;text-align: center;color: #ffffff;font-size: 15px; /*透明度*/}
+    .fade-2-right{width: 100%;height:100%;background:rgba(0,0,0,0.2);position: absolute;top: 0;left:0;display: none;}
+    .a-2-right:hover .fade-2-right{display: block;}
+    .a-2-right:hover .video-3-right{background-size: 150%;}
+    .a-2-right:hover .span-2-right{text-decoration: none;}
+    .bo2-right{transition: top 1s;position: absolute;color: #ffffff;top: -60px;left: 110px;z-index: 5;font-size: 20px;}
+    .video-3-right:hover .bo2-right{z-index: 2;top:65px;}
+    .time-icon-right{width: 20px;height: 15px;position: absolute;left: 15px;top: 195px;}
+    .icon-1{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .name2-right{width: 150px;height: 30px;font-size: 20px;line-height: 30px;position: absolute;top: 160px;left:20px;text-align: left;font-weight: bold;}/*background: #dddd00;*/
+    .time2-right{width: 200px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 195px;left:40px;text-align: left;font-weight: bold;}
+    .laud-icon-right{width: 20px;height: 15px;position: absolute;left: 120px;top: 195px;}
+    .icon-2{font-size: 10px;position: absolute;top: 0px;left: 5px}
+    .laud2-right{width: 50px;height: 15px;font-size: 10px;line-height: 15px;position: absolute;top: 195px;left:150px;text-align: left;font-weight: bold;}
+    .right1-5{width: 260px;height:260px;position: absolute;top: 1900px;}
+    .right5-1{width:240px;height: 150px;background: url("../img/halou.png");background-size: 100%;position: absolute;left: 20px;top: 70px;}
+
+    .bottom{width: 100%;height: 66px;background: #ff0000;text-align: center;color: #ffffff;line-height: 20px;position: absolute}
+    .bottom1{width: 100%;height: 40px;position: absolute;top:10px;}
+    .bottom p{margin: 0px;  }
+}
+@media (min-width: 860px) and (max-width: 1199px) {
+    .wall{
+        position:fixed;top:0;left:0;height: 100px;background: #ffffff;
+        width: 100%;
+        border-bottom: 1px solid #bbbbbb;
+        z-index: 20;
+    }
+    .wall1{
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    #daohang1{display: none}
+    *{padding: 0;margin: 0}
+    .row{height: 100px;width: 860px;margin: 0 auto}
+    .row1{height: 80px;width: 100%;margin: 100px auto;}
+    #img3{position: relative}
+    #img{height: 50px;top: 20px;position: absolute;left: 30px;}
+    #daohang{top: 20px;position: relative}
+    ul{height: 50px;line-height: 53px;position: absolute; }
+    ul li{list-style: none;float: left;text-align: center;z-index: 2;position: absolute;height: 50px;}
+    ul li a{text-align: center;color: rgba(3, 8, 2, 0.52) ;font-size: 15px }
+    ul li:hover a{color: #ffffff;text-decoration: none;}
+
+    .bg{border-radius:5px 5px 5px 5px;z-index:1;height: 30px;background: red;border: none;position: absolute;top:12px;}
+
+    #login{position:absolute;top:10px;right:10%;width: 100px;height: 40px;background: #ff0000;border: 0px;border: solid 1px #bbbbbb;border-radius: 5px 5px 5px 5px}
+    #login:hover{background:#ff664d; }
+    #line2{height: 20px;width: 1px;background: #dffffa;position: absolute;right: 48px;top: 10px}
+    .lz{text-decoration:none;text-align: center;color: #ffffff;font-size:17px;line-height:40px;position: relative;font-weight: bold}
+    #lz1{position: absolute;left: 10px;}
+    #lz2{position: absolute;right: 10px;}
+    .lz:hover{text-decoration: none;color: #ffffff}
+    #sousuo{position: relative;top: 20px}
+    .btn-danger{width: 100px;}
+    #middle{width: 100%;height: 100%;background: rgb(235,235,235);border-top: 1px solid #bbbbbb; margin-top: 0px;}
+
+}
+
+@media (min-width: 768px) and (max-width: 859px) {
+
+    #daohang{display: none}
+    #img{position:absolute;right:-180%;height: 50px;top:-70px}
+    #im{display: none}
+    .d:hover{background: #c4c4c4  }
+    #sousuo{position: relative;top: 20px}
+    .btn-danger{width: 100px;}
+    #middle{width: 100%;height: 100%;background: rgb(235,235,235);margin-top: -120px;}
+
+}
+@media  screen and (max-width:767px) {
+    #daohang{display: none}
+    #img{display: none;}
+    #im{height: 50px;}
+    .d:hover{background: #c4c4c4  }
+    #sousuo{position: relative;top: 20px}
+    .btn-danger{width: 100px;}
+    #middle{width: 100%;height: 100%;background: rgb(235,235,235);margin-top: -120px;}
+}

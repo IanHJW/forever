@@ -1,0 +1,37 @@
+.right{
+  width: 500px;
+  height: 600px;
+  background: #ffffff;
+  box-shadow: 0px 0px 5px 1px #8f8f8f;  /*Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+*/
+    -webkit-box-shadow: 0px 0px 5px 1px #4a4a4a;
+    -moz-box-shadow: 0px 0px 5px 1px #4a4a4a;
+    margin: 100px auto;
+    position: relative;
+}
+.title{width: 100%;height: 50px;border-bottom: 1px solid #bbbbbb;position: absolute  }
+.input-group{position: absolute;top: 80px;}
+.title > span{
+    font-size: 16px;
+    bottom: 10px;
+    left: 30px;
+    display: block;
+    position: absolute;
+}
+.input-group{width:400px;left: 50px; }
+.bt{background: #eb5648;color: #ffffff;font-size: 14px;left: 10px;}
+.dropdown-toggle{background: #ffffff}
+.li{border-bottom: 1px solid #bbbbbb  ;}
+.chenyuan{overflow: hidden;width: 100%;position: absolute;top:150px;border-top:1px solid #bbbbbb;height: 350px;  }
+.people{width: 100%;height: 60px;border-bottom: 1px solid #bbbbbb; }
+.people>img{width: 40px;height: 40px;border-radius: 20px;margin-left: 40px;margin-top: 10px;float: left}
+.name{margin-top: 22px;display: block;float: left;margin-left: 10px;}
+.people1{width: 200px;margin-top: 10px;left: 130px;position: absolute}
+.dropdown-menu1{margin-left: 130px;}
+.fenye{width: 350px;height: 51px;margin-top: 500px;margin-left:75px;border: 1px solid #bbbbbb;background: #ffffff;position: absolute}
+.ul{overflow:hidden;margin-right:-2px;  }
+.li{float: left;width:50px;height: 50px;border-right: 1px solid #bbbbbb; }
+.li:hover{background: #c4c4c4; }
+.li a{text-align: center;line-height: 50px;font-size: 16px;text-decoration: none;display: block;color: #3a3c3d
+}
+.li a:hover{cursor:pointer;color: white}
+.li span{font-size: 20px;text-align: center;line-height: 45px;display: block;color: #787878;}

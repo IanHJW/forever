@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.BbsCustomMapper" >
+	<resultMap id="BbsCustomMap" type="com.lph.forever.po.BbsCustom">
+		<result column="groupId" property="groupid" />
+		<result column="groupName" property="groupname" />
+		<result column="userName" property="username" />
+		<result column="postTime" property="posttime" />
+		<result column="postId" property="postid" />
+		<result column="agreeNumber" property="agreenumber" />
+		<result column="postName" property="postname" />
+		<result column="userImgPath" property="userimgpath"/>
+		<result column="postDetail" property="postdetail" />
+		<result column="judGment" property="judgment" />
+		<association property="user" javaType="com.lph.forever.po.User">
+			<id column="userId" property="userid" jdbcType="INTEGER" />
+			<result column="userName" property="username" jdbcType="VARCHAR" />
+			<result column="password" property="password" jdbcType="VARCHAR" />
+			<result column="Email" property="email" jdbcType="VARCHAR" />
+			<result column="userImgPath" property="userimgpath" jdbcType="VARCHAR" />
+			<result column="location" property="location" jdbcType="VARCHAR" />
+			<result column="groupName" property="groupname" jdbcType="VARCHAR" />
+		</association>
+		
+		<!-- <association property="group" javaType="com.lph.forever.po.Group">
+			<id column="groupId" property="groupid" jdbcType="INTEGER" />
+		    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+		    <result column="groupImgPath" property="groupimgpath" jdbcType="VARCHAR" />
+		    <result column="groupIntruduce" property="groupintruduce" jdbcType="VARCHAR" />
+		    <result column="groupVideoPower" property="groupvideopower" jdbcType="BIT" />
+		    <result column="groupNumber" property="groupnumber" jdbcType="LONGVARCHAR" />
+		</association> -->
+	</resultMap>
+
+	<select id="selectByGroupIdAndGrorpNameList" resultMap="BbsCustomMap" >
+  	select  DISTINCT
+  	 bbs.postName,bbs.postTime,bbs.userName,bbs.postId,bbs.postDetail,bbs.agreeNumber
+	FROM
+	 bbs, `group`,`user`,bbs_msgo
+	WHERE
+	`user`.groupName = `group`.groupName
+	AND
+	`group`.groupId = bbs.groupId
+	AND
+	`user`.groupName=#{groupName}
+	AND
+	`group`.groupId=#{groupId} 	order by posttime DESC
+  </select>
+  
+  <select id="findTouristBbs" resultMap="BbsCustomMap">
+  	SELECT * FROM bbs
+  </select>
+
+ 
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.BbsMsgAgreeMapper" >
+  <resultMap id="BaseResultMap" type="com.lph.forever.po.BbsMsgAgree" >
+    <id column="msgId" property="msgid" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    msgId, userId
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_msg_agree
+    where msgId = #{msgid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectBymsgIdAnduserId" resultMap="BaseResultMap">
+  	SELECT
+		*
+	FROM
+		bbs_msg_agree
+	WHERE
+		bbs_msg_agree.msgId=#{msgId}
+	AND
+		bbs_msg_agree.userId=#{userId}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_msg_agree
+    where msgId = #{msgid}
+    and userId = #{userid}
+  </delete> 
+  
+  
+  <insert id="insert" parameterType="com.lph.forever.po.BbsMsgAgree" >
+    insert into bbs_msg_agree (msgId, userId)
+    values (#{msgid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.lph.forever.po.BbsMsgAgree" >
+    insert into bbs_msg_agree
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msgid != null" >
+        msgId,
+      </if>
+      <if test="userid != null" >
+        userId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msgid != null" >
+        #{msgid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.BbsMsgAgree" >
+    update bbs_msg_agree
+    <set >
+      <if test="userid != null" >
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where msgId = #{msgid,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.lph.forever.po.BbsMsgAgree" >
+    update bbs_msg_agree
+    set userId = #{userid,jdbcType=INTEGER}
+    where msgId = #{msgid,jdbcType=INTEGER}
+  </update>
+</mapper>

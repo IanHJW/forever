@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.UserInfoCostomMapper">
+	<resultMap id="BaseResultMap" type="com.lph.forever.po.UserInfoCostom">
+		<id column="userId" property="userid" jdbcType="INTEGER" />
+		<result column="education" property="education" jdbcType="VARCHAR" />
+		<result column="userHobby" property="userhobby" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="BIT" />
+		<result column="adress" property="adress" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<association property="user" javaType="com.lph.forever.po.User">
+			<id column="userId" property="userid" />
+			<result column="userName" property="username" />
+			<result column="password" property="password" />
+			<result column="Email" property="email" />
+			<result column="userImgPath" property="userimgpath" />
+			<result column="location" property="location" />
+			<result column="groupName" property="groupname" />
+		</association>
+	</resultMap>
+	<!-- 根据用户名和密码查询用户的信息 -->
+	<select id="selcetUserInfoCostom" resultMap="BaseResultMap">
+		SELECT 
+			`user`.*,user_info.education,user_info.userHobby,user_info.adress,user_info.phone, user_info.sex
+		FROM
+			`user`
+		INNER JOIN
+			user_info
+		ON
+			user_info.userId = `user`.userId
+	</select>
+	<!-- 根据用户id查询用户信息 -->
+	<select id="selcetUserId" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		SELECT
+		`user`.*,user_info.education,user_info.userHobby,user_info.adress
+		FROM
+		`user`,user_info WHERE binary`user`. userId=#{userid} 
+	</select>
+
+	
+	
+	<!-- 根据id更新数据 -->
+	<update id="updateUserInfoCostom" parameterType="com.lph.forever.po.UserInfoCostom">
+		update user_info
+		<set>	
+			<if test="userhobby != null and userhobby != '' ">
+				userHobby = #{userhobby,jdbcType=VARCHAR},
+			</if>
+			<if test="education != null and education != '' ">
+				education = #{education,jdbcType=VARCHAR},
+			</if>
+			<if test="adress != null and adress != '' ">
+				adress = #{adress,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null and phone != '' ">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="sex != null">
+				sex = #{sex}
+			</if>
+		</set>
+		where userId = #{userid,jdbcType=INTEGER}
+	</update>
+
+
+</mapper>
+ 

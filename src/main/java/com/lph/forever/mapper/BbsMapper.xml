@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.BbsMapper" >
+  <resultMap id="BaseResultMap" type="com.lph.forever.po.Bbs" >
+    <id column="postId" property="postid" jdbcType="INTEGER" />
+    <result column="groupId" property="groupid" jdbcType="INTEGER" />    
+    <result column="postName" property="postname" jdbcType="VARCHAR" />
+    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="postTime" property="posttime" jdbcType="TIMESTAMP" />    
+    <result column="agreeNumber" property="agreenumber" jdbcType="INTEGER" />
+    <association property="group" javaType="com.lph.forever.po.Group" >
+    	<id column="groupId" property="groupid" jdbcType="INTEGER" />
+	    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+	    <result column="groupImgPath" property="groupimgpath" jdbcType="VARCHAR" />
+	    <result column="groupIntruduce" property="groupintruduce" jdbcType="VARCHAR" />
+	    <result column="groupVideoPower" property="groupvideopower" jdbcType="BIT" />
+	    <result column="groupNumber" property="groupnumber" jdbcType="LONGVARCHAR" />
+    </association>    
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.lph.forever.po.Bbs" extends="BaseResultMap" >
+    <result column="postDetail" property="postdetail" jdbcType="LONGVARCHAR" />    
+  </resultMap>
+  <sql id="Base_Column_List" >
+    postId, groupId, postName, userName, postTime, agreeNumber
+  </sql>
+  <sql id="Blob_Column_List" >
+    postDetail
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs
+    where postId = #{postId}
+  </select>
+  <!-- 根据groupid查询，按时间降序排列 -->
+ <!--  <select id="selectByGroupIdList" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select 
+	<include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+  	FROM 
+  	bbs 
+  	WHERE groupId = #{groupid,jdbcType=INTEGER} order by posttime DESC
+  </select> -->
+  
+  
+  <select id="selectByGroupIdList" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select bbs.*,`user`.*,`group`.* 
+	FROM bbs, `group`,`user`
+	WHERE
+	`user`.groupName = `group`.groupName
+	AND
+	`group`.groupId = bbs.groupId
+	AND
+	`group`.groupName=#{groupname, jdbcType=VARCHAR}
+	AND
+	`group`.groupId=#{groupid, jdbcType=INTEGER} 	order by posttime DESC
+  </select>
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs
+    where postId = #{postid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.lph.forever.po.Bbs" >
+    insert into bbs (postId, groupId, postName, 
+      userName, postTime,  agreeNumber,postDetail
+      )
+    values (#{postid,jdbcType=INTEGER}, #{groupid,jdbcType=INTEGER}, #{postname,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{posttime,jdbcType=TIMESTAMP}, #{agreenumber,jdbcType=INTEGER},
+      #{postdetail,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.lph.forever.po.Bbs" >
+    insert into bbs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="postid != null" >
+        postId,
+      </if>
+      <if test="groupid != null" >
+        groupId,
+      </if>
+      <if test="postname != null" >
+        postName,
+      </if>
+      <if test="username != null" >
+        userName,
+      </if>
+      <if test="posttime != null" >
+        postTime,
+      </if>
+      <if test="agreenumber != null" >
+        agreeNumber,
+      </if>
+      <if test="postdetail != null" >
+        postDetail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="postid != null" >
+        #{postid,jdbcType=INTEGER},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="postname != null" >
+        #{postname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="posttime != null" >
+        #{posttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreenumber != null" >
+        #{agreenumber,jdbcType=INTEGER},
+      </if>
+      <if test="postdetail != null" >
+        #{postdetail,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.Bbs" >
+    update bbs
+    <set >
+      <if test="groupid != null" >
+        groupId = #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="postname != null" >
+        postName = #{postname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        userName = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="posttime != null" >
+        postTime = #{posttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="agreenumber != null" >
+        agreeNumber = #{agreenumber,jdbcType=INTEGER},
+      </if>
+      <if test="postdetail != null" >
+        postDetail = #{postdetail,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where postId = #{postid,jdbcType=INTEGER}
+  </update>
+  
+  
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lph.forever.po.Bbs" >
+    update bbs
+    set groupId = #{groupid,jdbcType=INTEGER},
+      postName = #{postname,jdbcType=VARCHAR},
+      userName = #{username,jdbcType=VARCHAR},
+      postTime = #{posttime,jdbcType=TIMESTAMP},
+      agreeNumber = #{agreenumber,jdbcType=INTEGER},
+      postDetail = #{postdetail,jdbcType=LONGVARCHAR}
+    where postId = #{postid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lph.forever.po.Bbs" >
+    update bbs
+    set groupId = #{groupid,jdbcType=INTEGER},
+      postName = #{postname,jdbcType=VARCHAR},
+      userName = #{username,jdbcType=VARCHAR},
+      postTime = #{posttime,jdbcType=TIMESTAMP}
+      agreeNumber = #{agreenumber,jdbcType=INTEGER}
+    where postId = #{postid,jdbcType=INTEGER}
+  </update>
+</mapper>

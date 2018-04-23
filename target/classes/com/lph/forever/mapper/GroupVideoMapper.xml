@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.GroupVideoMapper" >
+  <resultMap id="BaseResultMap" type="com.lph.forever.po.GroupVideo" >
+    <id column="videoId" property="videoid" jdbcType="INTEGER" />
+    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="videoName" property="videoname" jdbcType="VARCHAR" />
+    <result column="videoPath" property="videopath" jdbcType="VARCHAR" />
+    <result column="upload" property="upload" jdbcType="TIMESTAMP" />
+    <result column="viewTime" property="viewtime" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    videoId, groupName, videoName, videoPath, upload, viewTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from group_video
+    where videoId = #{videoid,jdbcType=INTEGER}
+  </select>
+  
+  <!-- 根据家族名查询家族视频 -->
+  <select id="findGroupVideoByList" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from group_video
+    where groupName = #{groupname,jdbcType=VARCHAR} order by upload DESC
+  </select>
+  
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from group_video
+    where videoId = #{videoid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lph.forever.po.GroupVideo" >
+    insert into group_video (videoId, groupName, videoName, 
+      videoPath, upload, viewTime
+      )
+    values (#{videoid,jdbcType=INTEGER}, #{groupname,jdbcType=VARCHAR}, #{videoname,jdbcType=VARCHAR}, 
+      #{videopath,jdbcType=VARCHAR}, #{upload,jdbcType=TIMESTAMP}, #{viewtime,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lph.forever.po.GroupVideo" >
+    insert into group_video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="videoid != null" >
+        videoId,
+      </if>
+      <if test="groupname != null" >
+        groupName,
+      </if>
+      <if test="videoname != null" >
+        videoName,
+      </if>
+      <if test="videopath != null" >
+        videoPath,
+      </if>
+      <if test="upload != null" >
+        upload,
+      </if>
+      <if test="viewtime != null" >
+        viewTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="videoid != null" >
+        #{videoid,jdbcType=INTEGER},
+      </if>
+      <if test="groupname != null" >
+        #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="videoname != null" >
+        #{videoname,jdbcType=VARCHAR},
+      </if>
+      <if test="videopath != null" >
+        #{videopath,jdbcType=VARCHAR},
+      </if>
+      <if test="upload != null" >
+        #{upload,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewtime != null" >
+        #{viewtime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.GroupVideo" >
+    update group_video
+    <set >
+      <if test="groupname != null" >
+        groupName = #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="videoname != null" >
+        videoName = #{videoname,jdbcType=VARCHAR},
+      </if>
+      <if test="videopath != null" >
+        videoPath = #{videopath,jdbcType=VARCHAR},
+      </if>
+      <if test="upload != null" >
+        upload = #{upload,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewtime != null" >
+        viewTime = #{viewtime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where videoId = #{videoid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lph.forever.po.GroupVideo" >
+    update group_video
+    set groupName = #{groupname,jdbcType=VARCHAR},
+      videoName = #{videoname,jdbcType=VARCHAR},
+      videoPath = #{videopath,jdbcType=VARCHAR},
+      upload = #{upload,jdbcType=TIMESTAMP},
+      viewTime = #{viewtime,jdbcType=INTEGER}
+    where videoId = #{videoid,jdbcType=INTEGER}
+  </update>
+  
+  
+</mapper>

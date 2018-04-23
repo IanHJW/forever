@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.GroupMapper" >
+  <resultMap id="BaseResultMap" type="com.lph.forever.po.Group" >
+    <id column="groupId" property="groupid" jdbcType="INTEGER" />
+    <result column="groupName" property="groupname" jdbcType="VARCHAR" />
+    <result column="groupImgPath" property="groupimgpath" jdbcType="VARCHAR" />
+    <result column="groupIntruduce" property="groupintruduce" jdbcType="VARCHAR" />
+    <result column="groupVideoPower" property="groupvideopower" jdbcType="BIT" />
+    
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.lph.forever.po.Group" extends="BaseResultMap" >
+    <result column="groupNumber" property="groupnumber" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    groupId, groupName, groupImgPath, groupIntruduce, groupVideoPower
+  </sql>
+  <sql id="Blob_Column_List" >
+    groupNumber
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from group
+    where groupId = #{groupid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByGroupName" resultMap="BaseResultMap"  >
+    SELECT DISTINCT
+		`group`.*
+	FROM
+		`group`,
+		`user`
+	WHERE
+		`group`.groupName = `user`.groupName
+	AND `user`.groupName =#{groupname}
+  </select>
+  
+  
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from group
+    where groupId = #{groupid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lph.forever.po.Group" >
+    insert into group (groupId, groupName, groupImgPath, 
+      groupIntruduce, groupVideoPower, groupNumber
+      )
+    values (#{groupid,jdbcType=INTEGER}, #{groupname,jdbcType=VARCHAR}, #{groupimgpath,jdbcType=VARCHAR}, 
+      #{groupintruduce,jdbcType=VARCHAR}, #{groupvideopower,jdbcType=BIT}, #{groupnumber,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lph.forever.po.Group" >
+    insert into group
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="groupid != null" >
+        groupId,
+      </if>
+      <if test="groupname != null" >
+        groupName,
+      </if>
+      <if test="groupimgpath != null" >
+        groupImgPath,
+      </if>
+      <if test="groupintruduce != null" >
+        groupIntruduce,
+      </if>
+      <if test="groupvideopower != null" >
+        groupVideoPower,
+      </if>
+      <if test="groupnumber != null" >
+        groupNumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="groupid != null" >
+        #{groupid,jdbcType=INTEGER},
+      </if>
+      <if test="groupname != null" >
+        #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="groupimgpath != null" >
+        #{groupimgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="groupintruduce != null" >
+        #{groupintruduce,jdbcType=VARCHAR},
+      </if>
+      <if test="groupvideopower != null" >
+        #{groupvideopower,jdbcType=BIT},
+      </if>
+      <if test="groupnumber != null" >
+        #{groupnumber,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.Group" >
+    update group
+    <set >
+      <if test="groupname != null" >
+        groupName = #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="groupimgpath != null" >
+        groupImgPath = #{groupimgpath,jdbcType=VARCHAR},
+      </if>
+      <if test="groupintruduce != null" >
+        groupIntruduce = #{groupintruduce,jdbcType=VARCHAR},
+      </if>
+      <if test="groupvideopower != null" >
+        groupVideoPower = #{groupvideopower,jdbcType=BIT},
+      </if>
+      <if test="groupnumber != null" >
+        groupNumber = #{groupnumber,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where groupId = #{groupid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.lph.forever.po.Group" >
+    update group
+    set groupName = #{groupname,jdbcType=VARCHAR},
+      groupImgPath = #{groupimgpath,jdbcType=VARCHAR},
+      groupIntruduce = #{groupintruduce,jdbcType=VARCHAR},
+      groupVideoPower = #{groupvideopower,jdbcType=BIT},
+      groupNumber = #{groupnumber,jdbcType=LONGVARCHAR}
+    where groupId = #{groupid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lph.forever.po.Group" >
+    update group
+    set groupName = #{groupname,jdbcType=VARCHAR},
+      groupImgPath = #{groupimgpath,jdbcType=VARCHAR},
+      groupIntruduce = #{groupintruduce,jdbcType=VARCHAR},
+      groupVideoPower = #{groupvideopower,jdbcType=BIT}
+    where groupId = #{groupid,jdbcType=INTEGER}
+  </update>
+</mapper>

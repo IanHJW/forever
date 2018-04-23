@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lph.forever.mapper.UserInfoMapper">
+	<resultMap id="BaseResultMap" type="com.lph.forever.po.UserInfo">
+		<id column="userId" property="userid" jdbcType="INTEGER" />
+		<result column="sex" property="sex" jdbcType="BIT" />
+		<result column="userHobby" property="userhobby" jdbcType="VARCHAR" />
+		<result column="birthday" property="birthday" jdbcType="DATE" />
+		<result column="education" property="education" jdbcType="VARCHAR" />
+		<result column="adress" property="adress" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		userId, sex, userHobby, birthday, education, adress, phone
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from user_info
+		where userId = #{userid,jdbcType=INTEGER}
+	</select>
+
+	<!-- 通过主键id 返回用户实例 -->
+	<select id="selectByUserId" resultMap="BaseResultMap"
+		parameterType="com.lph.forever.po.UserInfo">
+		select
+		<include refid="Base_Column_List" />
+		from user_info
+		where userId = #{userid,jdbcType=INTEGER}
+	</select>
+
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from user_info
+		where userId = #{userid,jdbcType=INTEGER}
+	</delete>
+	<insert id="insertSelective" parameterType="com.lph.forever.po.UserInfo">
+		insert into user_info
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userid != null">
+				userId,
+			</if>
+			<if test="sex != null">
+				sex,
+			</if>
+			<if test="userhobby != null">
+				userHobby,
+			</if>
+			<if test="birthday != null">
+				birthday,
+			</if>
+			<if test="education != null">
+				education,
+			</if>
+			<if test="adress != null">
+				adress,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userid != null">
+				#{userid,jdbcType=INTEGER},
+			</if>
+			<if test="sex != null">
+				#{sex,jdbcType=BIT},
+			</if>
+			<if test="userhobby != null">
+				#{userhobby,jdbcType=VARCHAR},
+			</if>
+			<if test="birthday != null">
+				#{birthday,jdbcType=DATE},
+			</if>
+			<if test="education != null">
+				#{education,jdbcType=VARCHAR},
+			</if>
+			<if test="adress != null">
+				#{adress,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.lph.forever.po.UserInfo">
+		update user_info
+		<set>
+			<if test="sex != null">
+				sex = #{sex,jdbcType=BIT},
+			</if>
+			<if test="userhobby != null">
+				userHobby = #{userhobby,jdbcType=VARCHAR},
+			</if>
+			<if test="birthday != null">
+				birthday = #{birthday,jdbcType=DATE},
+			</if>
+			<if test="education != null">
+				education = #{education,jdbcType=VARCHAR},
+			</if>
+			<if test="adress != null">
+				adress = #{adress,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where userId = #{userid,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.lph.forever.po.UserInfo">
+		update user_info
+		set sex = #{sex,jdbcType=BIT},
+		userHobby = #{userhobby,jdbcType=VARCHAR},
+		birthday = #{birthday,jdbcType=DATE},
+		education = #{education,jdbcType=VARCHAR},
+		adress = #{adress,jdbcType=VARCHAR},
+		phone = #{phone,jdbcType=VARCHAR}
+		where userId = #{userid,jdbcType=INTEGER}
+	</update>
+</mapper>

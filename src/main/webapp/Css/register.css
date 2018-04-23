@@ -1,0 +1,93 @@
+#div-1{
+    position: relative;
+    height: 400px;
+    width: 300px;
+    top: 50px;margin-left: 80px;
+    box-shadow: 0px 0px 3px 1px #4a4a4a;  /*Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+*/
+    -webkit-box-shadow: 0px 0px 3px 1px #4a4a4a;
+    -moz-box-shadow: 0px 0px 3px 1px #4a4a4a;
+    /*background-clip: padding-box;*/
+    background: #ffffff;
+    opacity: 0.6; /*透明度*/
+}
+#h3-1{position: absolute;left: 130px;color: #ff4933;top:20px}
+.glyphicon-user{font-size:25px;color: #ff0000;position: absolute;top: 100px;left: 20px}
+.alert-success{position: absolute;top: 95px;left: 60px;width: 200px;}
+
+.glyphicon-search{font-size:25px;color: red;position: absolute;top: 170px;left: 20px}
+.alert-info{position: absolute;top: 165px;left: 60px;width: 200px;}
+
+.glyphicon-repeat{font-size:25px;color: red;position: absolute;top: 240px;left: 20px}
+.alert-warning{position: absolute;top: 235px;left: 60px;width: 200px;}
+#submit-1{height: 50px;width: 200px;position: absolute;left:60px;top: 315px;background: #ff0000;text-align: center;line-height: 25px;color: #ffffff;border: solid 0px #ff0000;}
+#text-1{position:absolute;top: 135px;left: 60px;color: #ff0000;display: none}
+#password1-1{position:absolute;top: 198px;left: 60px;color: #ff0000;}
+#password2-1{position:absolute;top: 275px;left: 60px;color: #ff0000;}
+
+.title{width: 100%;height: 100px;background: #ffffff;}
+.title1{width: 1200px;height: 100px;margin: 0 auto;position: relative}
+.return{width: 120px;height: 25px;border: 1px solid #000000;line-height: 25px;text-align: center;font-size: 14px;
+    position: absolute;right: 120px;top: 33px;}
+.return>a{color: #000000;text-decoration: none;width: 120px;height: 25px;display: block}
+#img3{position: relative}
+#img{height: 50px;top: 20px;position: absolute;left: 20px;}
+.middle{width: 100%;height: 710px;background: #F3F5F7;border-top: 1px solid #b4b4b4; }
+.middle1{width: 1200px;height: 550px;margin: auto}
+#zi{width: 400px;height: 100px;
+    margin-left: 350px;position: absolute;line-height: 100px;margin-top: 29px}
+#container{
+    width: 600px; height: 300px;overflow: hidden;position: relative;top: 100px;left: 100px;  float: left;
+}
+#list{
+    width: 4200px;  height: 300px;position: absolute;z-index: 1;
+}
+#list img{
+    float: left;
+    width: 600px;
+    height: 300px;
+}
+#buttons{
+    position: absolute;height: 10px;width: 100px;z-index: 2;button:20px;left: 250px;
+}
+#buttons span{
+    cursor: pointer;float: left;border: 1px solid #fff;width: 8px;height: 10px; border-radius: 50%; background: #333; margin: 350px 5px 5px 5px;
+}
+#buttons .on{
+    background: orange;
+}
+.arrow{
+    cursor: pointer;display: none;line-height: 39px;text-align: center;font-size: 36px;font-weight: bold;width: 40px;position: absolute;
+    z-index:2;top: 135px;background-color: RGBA(0,0,0,0.3);color: #ffffff;text-decoration: none;
+}
+.arrow:hover{
+    background-color:RGBA(0,0,0,0.7);
+}
+#container:hover  .arrow{
+    display: block;text-decoration: none;
+}
+#prev{
+    left: 20px;
+}
+#next{
+    right: 20px;
+}
+.wenhua{width: 100%;height: 200px;background: #ffffff;position: absolute;top: 600px;
+    box-shadow: 0px 0px 3px 1px #4a4a4a;  /*Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+*/
+    -webkit-box-shadow: 0px 0px 3px 1px #4a4a4a;
+    -moz-box-shadow: 0px 0px 3px 1px #4a4a4a;}
+.wenhua1{width: 1200px;height: 200px;margin: 0 auto;position: relative}
+.t{width: 200px;height: 200px;position: absolute;margin-left: 100px;float: left}
+.t >.i{;display:block;margin:45px  auto}
+.t > .p{display: block;margin-left: 38px;margin-top:-40px;font-size: 18px;}
+
+.t1{width: 200px;height: 200px;position: absolute;right: 500px;top: 0px;float: left}
+.t1 >.i1{;display:block;margin:45px  auto}
+.t1 > .p1{display: block;margin-left: 38px;margin-top:-40px;font-size: 18px;}
+
+.t2{width: 200px;height: 200px;position: absolute;right: 100px;top: 0px;}
+.t2 >.i2{;display:block;margin:45px  auto}
+.t2 > .p2{display: block;margin-left: 38px;margin-top:-40px;font-size: 18px;}
+
+.bottom{width: 100%;height: 66px;background: #f3f5f7;text-align: center;color: #999999;line-height: 20px;position: relative;}
+.bottom1{width: 100%;height: 40px;position: absolute;top:10px;}
+.bottom1 p{margin: 0px;  }
